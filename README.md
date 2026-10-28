@@ -13,21 +13,21 @@ The `PUT /api/students/{id}` operation updates an existing student. The API stor
 docker compose up --build
 ```
 
-The application is available at `http://localhost:8080/api/students`.
+The application is available at `http://localhost:8081/api/students`. Host port 8081 avoids a conflict with the local Jenkins service; the container still exposes Spring Boot port 8080.
 
 ## CRUD examples
 
 ```bash
-curl -X POST http://localhost:8080/api/students \
+curl -X POST http://localhost:8081/api/students \
   -H 'Content-Type: application/json' \
   -d '{"name":"Kukurekin Danil","email":"danil.37554@iitu.kz"}'
-curl http://localhost:8080/api/students
-curl http://localhost:8080/api/students/1
-curl -X PUT http://localhost:8080/api/students/1 \
+curl http://localhost:8081/api/students
+curl http://localhost:8081/api/students/1
+curl -X PUT http://localhost:8081/api/students/1 \
   -H 'Content-Type: application/json' \
   -d '{"name":"Kukurekin Danil Updated","email":"danil.37554@iitu.kz"}'
-curl -X DELETE http://localhost:8080/api/students/1
-curl -i http://localhost:8080/api/students/999
+curl -X DELETE http://localhost:8081/api/students/1
+curl -i http://localhost:8081/api/students/999
 ```
 
 ## Project services
