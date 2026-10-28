@@ -35,4 +35,6 @@ curl -i http://localhost:8081/api/students/999
 - `app`: Spring Boot API, port 8080.
 - `db`: PostgreSQL 16 with a persistent named volume `postgres_data`.
 
+The Jenkins job `Kukurekin_Danil_Student_API` polls `main` and runs the build pipeline when new commits are detected.
+
 The app connects to `db`, the Compose service name, rather than `localhost`.
