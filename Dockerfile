@@ -2,10 +2,9 @@ FROM gradle:8.10.2-jdk17 AS build
 WORKDIR /workspace
 COPY gradlew build.gradle settings.gradle ./
 COPY gradle ./gradle
-RUN chmod +x gradlew
-RUN ./gradlew --no-daemon dependencies
+RUN gradle --no-daemon dependencies
 COPY src ./src
-RUN ./gradlew --no-daemon bootJar
+RUN gradle --no-daemon bootJar
 
 FROM eclipse-temurin:17-jre
 WORKDIR /app
