@@ -4,7 +4,7 @@ Spring Boot CRUD API for students. Author: **Kukurekin Danil**, group **it2-2312
 
 ## Change implemented
 
-The `PUT /api/students/{id}` operation updates the student record. The API stores data in PostgreSQL when started with Docker Compose.
+The `PUT /api/students/{id}` operation updates the student record safely. The API stores data in PostgreSQL when started with Docker Compose.
 
 ## Run locally
 
