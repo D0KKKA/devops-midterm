@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'kz.iitu.kukurekin'
-version = '1.0-37554'
+version = '1.0.1-37554'
 
 java {
     toolchain {
