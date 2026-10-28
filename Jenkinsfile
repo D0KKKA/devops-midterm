@@ -28,12 +28,12 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh '/usr/local/bin/docker build -t $IMAGE_NAME .'
+                sh 'PATH=/Applications/Docker.app/Contents/Resources/bin:/usr/local/bin:$PATH /usr/local/bin/docker build -t $IMAGE_NAME .'
             }
         }
         stage('Verify') {
             steps {
-                sh '/usr/local/bin/docker image inspect $IMAGE_NAME > /dev/null'
+                sh 'PATH=/Applications/Docker.app/Contents/Resources/bin:/usr/local/bin:$PATH /usr/local/bin/docker image inspect $IMAGE_NAME > /dev/null'
                 echo 'Docker image verified successfully'
             }
         }
