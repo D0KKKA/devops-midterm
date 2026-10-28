@@ -28,12 +28,12 @@ pipeline {
         }
         stage('Docker Build') {
             steps {
-                sh 'docker build -t $IMAGE_NAME .'
+                sh '/usr/local/bin/docker build -t $IMAGE_NAME .'
             }
         }
         stage('Verify') {
             steps {
-                sh 'docker image inspect $IMAGE_NAME > /dev/null'
+                sh '/usr/local/bin/docker image inspect $IMAGE_NAME > /dev/null'
                 echo 'Docker image verified successfully'
             }
         }
